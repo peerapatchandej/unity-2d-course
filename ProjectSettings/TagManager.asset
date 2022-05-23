@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - EnemyHitbox
+  - PlayerHitbox
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Ground
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 917327671
+    locked: 0
+  - name: Platform
+    uniqueID: 3594747507
+    locked: 0
+  - name: Interactable
+    uniqueID: 162148915
+    locked: 0
+  - name: OnGround
+    uniqueID: 1671929709
+    locked: 0
+  - name: Character
+    uniqueID: 30873081
+    locked: 0
+  - name: Foreground
+    uniqueID: 459600333
+    locked: 0
+  - name: Hub
+    uniqueID: 791283367
+    locked: 0
