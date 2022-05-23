@@ -42,6 +42,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -244,6 +245,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      PlantMidSized_4: 1157861077470599851
+      PlantMidSized_0: 3816738706353889961
+      PlantMidSized_3: 2390546910940708952
+      PlantMidSized_5: -3106522695114286409
+      PlantMidSized_1: -3774614981943441506
+      PlantMidSized_2: -8881838690313580143
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

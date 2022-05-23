@@ -78,6 +78,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -532,6 +533,25 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      EllenHealth_6: -3718529186161523168
+      EllenHealth_4: 1561495262440645230
+      EllenHealth_2: 9023950761750499417
+      EllenHealth_13: 2361693803564699050
+      EllenHealth_0: 4822291593452083152
+      EllenHealth_7: -5541907210695987614
+      EllenHealth_10: -4225390862547801506
+      EllenHealth_9: 1969664360342894645
+      EllenHealth_15: -6049798574208594245
+      EllenHealth_14: 4089530810048244301
+      EllenHealth_17: 8668461041429248138
+      EllenHealth_5: 3049350226673016247
+      EllenHealth_12: -7479660183978737401
+      EllenHealth_16: -6830284968949696265
+      EllenHealth_1: -3028685649441480464
+      EllenHealth_3: -3531852766110048286
+      EllenHealth_11: 1529874125190519855
+      EllenHealth_8: 2312682018158517841
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
