@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
   private Animator animator = null;
   private CapsuleCollider2D bodyCollider = null;
   private PlayerSound playerSound = null;
+  private GameInputAction gameInputAction = null;
   private float horizontal = 0f;
   private float restartTime = 0f;
   private bool isGround = false;
@@ -36,6 +37,32 @@ public class PlayerMovement : MonoBehaviour
     animator = GetComponent<Animator>();
     bodyCollider = GetComponent<CapsuleCollider2D>();
     playerSound = GetComponent<PlayerSound>();
+    gameInputAction = new GameInputAction();
+    gameInputAction.Player.Enable();
+    gameInputAction.Player.Jump.performed += JumpPerformed;
+    gameInputAction.Player.Attack.performed += AttackPerformed;
+  }
+
+  private void AttackPerformed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+  {
+    if (obj.performed == true && isGround == true && Mathf.Approximately(horizontal, 0f))
+    {
+      isAttack = true;
+    }
+  }
+
+  private void JumpPerformed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+  {
+    if (obj.performed == true && isGround == true)
+    {
+      isJump = true;
+    }
+  }
+
+  private void OnDestroy()
+  {
+    gameInputAction.Player.Jump.performed -= JumpPerformed;
+    gameInputAction.Player.Attack.performed -= AttackPerformed;
   }
 
   // Update is called once per frame
@@ -55,16 +82,19 @@ public class PlayerMovement : MonoBehaviour
       return;
     }
 
-    horizontal = Input.GetAxisRaw("Horizontal");
+    Vector2 movement = gameInputAction.Player.Movement.ReadValue<Vector2>();
+    horizontal = Mathf.Round(movement.x);
 
-    if (Input.GetKeyDown(KeyCode.Z) && isGround == true)
-    {
-      isJump = true;
-    }
-    if (Input.GetKeyDown(KeyCode.X) && isGround == true && Mathf.Approximately(horizontal, 0f))
-    {
-      isAttack = true;
-    }
+    //horizontal = Input.GetAxisRaw("Horizontal");
+
+    //if (Input.GetKeyDown(KeyCode.Z) && isGround == true)
+    //{
+    //  isJump = true;
+    //}
+    //if (Input.GetKeyDown(KeyCode.X) && isGround == true && Mathf.Approximately(horizontal, 0f))
+    //{
+    //  isAttack = true;
+    //}
 
     Flip();
     Attack();

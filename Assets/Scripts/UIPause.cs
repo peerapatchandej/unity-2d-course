@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,7 @@ public class UIPause : MonoBehaviour
   [SerializeField]
   private Button mainMenu = default;
 
-  private void Start()
+  public void Setup(Action onDestroyUI)
   {
     Canvas canvas = GetComponent<Canvas>();
     canvas.worldCamera = Camera.main;
@@ -22,6 +23,7 @@ public class UIPause : MonoBehaviour
     resume.onClick.AddListener(() =>
     {
       Time.timeScale = 1f;
+      onDestroyUI?.Invoke();
       Destroy(gameObject);
     });
 
@@ -32,4 +34,25 @@ public class UIPause : MonoBehaviour
       Destroy(gameObject);
     });
   }
+
+  //private void Start()
+  //{
+  //  Canvas canvas = GetComponent<Canvas>();
+  //  canvas.worldCamera = Camera.main;
+
+  //  Time.timeScale = 0f;
+
+  //  resume.onClick.AddListener(() =>
+  //  {
+  //    Time.timeScale = 1f;
+  //    Destroy(gameObject);
+  //  });
+
+  //  mainMenu.onClick.AddListener(() =>
+  //  {
+  //    Time.timeScale = 1f;
+  //    SceneManager.LoadScene("MainMenu");
+  //    Destroy(gameObject);
+  //  });
+  //}
 }
